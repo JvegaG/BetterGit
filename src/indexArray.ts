@@ -40,7 +40,6 @@ const endTime = performance.now()
 
 
 
-
 const userIndexado = users.reduce((acc: { [key: number]: Users }, el) => {
     acc[el.id] = el
     return acc
