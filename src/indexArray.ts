@@ -37,7 +37,7 @@ const _lista: WithCreatedByUser[] = lista.map(item => ({
     created_by_user: users.find(x => x.id === item.created_by)
 }))
 const endTime = performance.now()
-
+console.log("performance 1:", endTime - startTime)
 
 
 const userIndexado = users.reduce((acc: { [key: number]: Users }, el) => {
@@ -51,3 +51,5 @@ const _lista1: WithCreatedByUser[] = lista.map(item => ({
     created_by_user: userIndexado[item.created_by]
 }))
 const endTime1 = performance.now()
+
+console.log("performance 1:", endTime1 - startTime1)
