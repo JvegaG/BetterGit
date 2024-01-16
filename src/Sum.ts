@@ -4,3 +4,4 @@ const b = 0.2;
 const result = a + b; //?
 
 const _result = Number(result.toFixed(2)) //?
+console.log("hola Luis")
