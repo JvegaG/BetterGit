@@ -31,25 +31,22 @@ for (let i = 0; i < 10000; i++) {
 
 type WithCreatedByUser = WithCreatedBy & { created_by_user?: Users }
 
-const startTime = performance.now()
+console.time("finding way 1")
 const _lista: WithCreatedByUser[] = lista.map(item => ({
     ...item,
     created_by_user: users.find(x => x.id === item.created_by)
 }))
-const endTime = performance.now()
-console.log("performance 1:", endTime - startTime)
-
+console.timeEnd("finding way 1")
 
 const userIndexado = users.reduce((acc: { [key: number]: Users }, el) => {
     acc[el.id] = el
     return acc
 }, {})
 
-const startTime1 = performance.now()
+
+console.time("finding way 2")
 const _lista1: WithCreatedByUser[] = lista.map(item => ({
     ...item,
     created_by_user: userIndexado[item.created_by]
 }))
-const endTime1 = performance.now()
-
-console.log("performance 1:", endTime1 - startTime1)
+console.timeEnd("finding way 2") 
