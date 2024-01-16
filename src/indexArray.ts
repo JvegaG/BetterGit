@@ -37,7 +37,7 @@ const _lista: WithCreatedByUser[] = lista.map(item => ({
     created_by_user: users.find(x => x.id === item.created_by)
 }))
 const endTime = performance.now()
-console.log("first method:", endTime - startTime);
+
 
 
 
@@ -52,4 +52,3 @@ const _lista1: WithCreatedByUser[] = lista.map(item => ({
     created_by_user: userIndexado[item.created_by]
 }))
 const endTime1 = performance.now()
-console.log("better method:", endTime1 - startTime1);
